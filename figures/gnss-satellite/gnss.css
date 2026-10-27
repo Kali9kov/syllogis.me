@@ -1,0 +1,69 @@
+.gs {
+  --gs-up: #e8760c;
+}
+
+.iso[data-theme="dark"] .gs {
+  --gs-up: #ffa040;
+}
+
+.gs-pulse {
+  fill: var(--gs-up);
+  stroke: var(--anatomy-paper);
+  stroke-width: 0.6;
+}
+
+.gs .iso-plate {
+  overflow: hidden;
+}
+
+.gs-stage {
+  position: relative;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: crosshair;
+}
+
+.gs-stage:focus-visible {
+  outline: 1px solid var(--anatomy-muted);
+  outline-offset: 6px;
+}
+
+.gs-said {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.gs-stage > svg,
+.gs-stage > canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gs-stage > .gs-layer {
+  position: absolute;
+  inset: 0;
+  height: 100% !important;
+  pointer-events: none;
+}
+
+.iso:not([data-theme="light"]) .gs-gl {
+  mix-blend-mode: screen;
+}
+
+.gs-stage[data-gl] .gs-fallback {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .gs-stage {
+    width: 116%;
+    margin: -4% -8% -2%;
+  }
+}
